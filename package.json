@@ -9,7 +9,7 @@
     "rollup": "rollup -c",
     "prebuild": "cp -a ./static/. ./dist",
     "build": "npm run dev && npm run prebuild && npm run rollup",
-    "serve": "es-dev-server --root-dir dist --app-index index.html --node-resolve --watch --open"
+    "serve": "es-dev-server --root-dir dist --app-index index.html --node-resolve --watch"
   },
   "author": "",
   "license": "ISC",
@@ -19,6 +19,7 @@
     "@types/codemirror": "^5.60.2",
     "@types/node": "^16.3.1",
     "codemirror": "^5.62.0",
+    "confetti-js": "0.0.18",
     "es-dev-server": "^2.1.0",
     "lit": "^2.0.0-rc.2",
     "postcss": "^8.3.5",
@@ -32,6 +33,5 @@
     "xstate": "^4.22.0"
   },
   "dependencies": {
-    "confetti-js": "0.0.18"
   }
 }
