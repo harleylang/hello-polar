@@ -150,11 +150,6 @@ class TryPolar extends useStateMachine(LitElement, {
       <textarea id='codetext'></textarea>
       <button id='submit' @click="${handeSubmit}">Submit</button>
 
-        <div class='objectives'>
-          <span>CONTEXT: ${JSON.stringify(state.context.values)}</span>
-          <span>STATE: ${JSON.stringify(state.value)}</span>
-        </div>
-
       ${state.matches('idle.query.error.oso') ?
         html`
           <h3>ERROR!!</h3>
