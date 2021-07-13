@@ -68,6 +68,7 @@ class TryPolar extends useStateMachine(LitElement, {
         width: calc(100% - 64px);
         padding: 32px;
         margin: 0;
+        margin-bottom: 32px;
         background-color: #99ccff;
         border-radius: 10px;
       }
@@ -142,7 +143,7 @@ class TryPolar extends useStateMachine(LitElement, {
                       }` 
                       : state.matches('idle.query.error.oso') ?
                         html`<span class='error'>Please resolve the error message below.</span>`
-                      : html`<span class='idle'>Idle -- write your policies and press submit to continue.</span>` }
+                      : html`<span class='idle'>Idle -- write your policies and click submit to continue.</span>` }
                 </li>
                 <li>
                   Result:
@@ -152,7 +153,7 @@ class TryPolar extends useStateMachine(LitElement, {
                         : html`<span class='invalid'>Failing.</span>`
                       : state.matches('idle.query.error.oso') ?
                         html`<span class='error'>Please resolve the error message below.</span>`
-                      : html`<span class='idle'>Idle -- write your policies and press submit to continue.</span>` }
+                      : html`<span class='idle'>Idle -- write your policies and click submit to continue.</span>` }
                 </li>
               </ul>
             </li>
