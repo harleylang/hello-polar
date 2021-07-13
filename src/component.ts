@@ -130,7 +130,7 @@ class TryPolar extends useStateMachine(LitElement, {
               <ul>
                 <li>
                   Expected access: <code>${obj.expected}</code> /
-                    ${obj.expected ? html`<code>access granded</code>` : html`<code>access denied</code>`}
+                    ${obj.expected ? html`<code>access granted</code>` : html`<code>access denied</code>`}
                 </li>
                 <li>
                   Returned access:
