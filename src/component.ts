@@ -8,6 +8,8 @@ import CodeMirrorCss from 'codemirror/lib/codemirror.css';
 import CodeMirrorCssElegant from 'codemirror/theme/elegant.css';
 import CodeMirrorCssBootstrap from './bootstrap.css';
 
+import ConfettiGenerator from 'confetti-js';
+
 import { Test } from './types';
 
 /**
@@ -72,11 +74,22 @@ class TryPolar extends useStateMachine(LitElement, {
       .objectives {
         margin-bottom: 16px;
       }
+      canvas#wahho_celebrategoodtimescmon_itsacelebration_ {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        left:0;
+        top:0;
+        z-index:-1;
+      }
     `;
     return result;
   }
 
   editor = {} as CodeMirror.EditorFromTextArea;
+
+  set = false;
+  canvas: any;
 
   // setup state machine
   render() {
@@ -85,8 +98,20 @@ class TryPolar extends useStateMachine(LitElement, {
 
     const handeSubmit = () => {
       let input = this.editor.getValue().replace(/'/g, '"') 
-      send('SUBMIT', { input: input })
+      send('SUBMIT', { input: input });
     }
+
+    if (typeof this.canvas !== 'undefined') { // if applicable, show confetti
+      if (state.matches('idle.query.valid') && !this.set) {
+        let element = this.shadowRoot?.getElementById("wahho_celebrategoodtimescmon_itsacelebration_");
+        this.canvas = new ConfettiGenerator({ target: element, animate: true });
+        this.canvas.render();
+        this.set = true;
+      } else if (['idle.query.invalid', 'idle.query.error'].some(state.matches) && this.set) {
+        this.canvas.clear();
+        this.set = false;
+      };
+    };
 
     const generateObjectives = () => {
 
@@ -143,6 +168,9 @@ class TryPolar extends useStateMachine(LitElement, {
     };
 
     return html`
+
+      <canvas id="wahho_celebrategoodtimescmon_itsacelebration_"></canvas>
+
       <h3>Objectives</h3>
       ${generateObjectives()}
 
@@ -174,6 +202,7 @@ class TryPolar extends useStateMachine(LitElement, {
 
   async firstUpdated() {
     setTimeout(() => {
+      this.canvas = new ConfettiGenerator({ target: this.shadowRoot?.getElementById("wahho_celebrategoodtimescmon_itsacelebration_"), animate: true });
       let textarea = this.shadowRoot?.querySelector('#codetext') as HTMLTextAreaElement; 
       let editor = CodeMirror.fromTextArea(textarea,{
         lineNumbers: true,
