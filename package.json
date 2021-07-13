@@ -1,0 +1,36 @@
+{
+  "name": "polar-component",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "prebuild-dev": "cp -a ./static/. ./build",
+    "dev": "npm run prebuild-dev && tsc",
+    "rollup": "rollup -c",
+    "prebuild": "cp -a ./static/. ./dist",
+    "build": "npm run dev && npm run prebuild && npm run rollup",
+    "serve": "es-dev-server --root-dir dist --app-index index.html --node-resolve --watch --open"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^19.0.0",
+    "@rollup/plugin-node-resolve": "^13.0.0",
+    "@types/codemirror": "^5.60.2",
+    "@types/node": "^16.3.1",
+    "es-dev-server": "^2.1.0",
+    "postcss": "^8.3.5",
+    "rollup": "^2.53.1",
+    "rollup-plugin-copy": "^3.4.0",
+    "rollup-plugin-inject-process-env": "^1.3.1",
+    "rollup-plugin-minify-html-literals": "^1.2.6",
+    "rollup-plugin-postcss": "^4.0.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "typescript": "^4.3.5"
+  },
+  "dependencies": {
+    "codemirror": "^5.62.0",
+    "lit": "^2.0.0-rc.2",
+    "xstate": "^4.22.0"
+  }
+}
