@@ -1,4 +1,4 @@
-# <try-polar> Polar queries on the web </try-polar>
+# `<try-polar>` Learn polar queries on the web `</try-polar>`
 
 ## Installation
 
