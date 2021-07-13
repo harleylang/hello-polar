@@ -4,7 +4,7 @@ The `<try-polar></try-polar>` web component provides an interface for teaching t
 
 Via the `context` attribute, educators can specify objectives for the learner's Polar policy.
 
-``
+```
 <try-polar context='{ "tests": [ { "desc": "An example", "query": ["_","_","_"], "expected": false } ]}'></try-polar>
 ```
 
