@@ -1,11 +1,11 @@
-# `<try-polar>` Learn polar on the web `</try-polar>`
+# `<hello-polar>` Learn polar on the web `</hello-polar>`
 
-The `<try-polar></try-polar>` web component provides an interface for teaching the Polar language.
+The `<hello-polar></hello-polar>` web component provides an interface for teaching the Polar language.
 
 Via the `context` attribute, educators can specify objectives for the learner's Polar policy.
 
 ```
-<try-polar context='{ "tests": [ { "desc": "An example", "query": ["_","_","_"], "expected": false } ]}'></try-polar>
+<hello-polar context='{ "tests": [ { "desc": "An example", "query": ["_","_","_"], "expected": false } ]}'></hello-polar>
 ```
 
 The policies written by the user are loaded into the Oso policy engine, and then each objective is tested. Results are displayed to the user, and confetti appears when the user's policies pass each objective. 
@@ -15,7 +15,7 @@ The policies written by the user are loaded into the Oso policy engine, and then
 ### Via NPM:
 
 ```
-npm i https://github.com/harleylang/try-polar
+npm i https://github.com/harleylang/hello-polar
 ```
 
 To embed:
@@ -23,7 +23,7 @@ To embed:
 ```
 ...
 <script src='./node_modules/try-oso/dist/index.js></script>
-<try-polar context='{ "tests": []}'></try-polar>
+<hello-polar context='{ "tests": []}'></hello-polar>
 ...
 ```
 

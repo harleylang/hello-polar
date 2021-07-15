@@ -4,3 +4,4 @@ node_modules
 static/*
 !static/index.html
 !static/index.js
+!static/bootstrap.css

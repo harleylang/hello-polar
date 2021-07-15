@@ -13,7 +13,7 @@ import ConfettiGenerator from 'confetti-js';
 import { Test } from './types';
 
 /**
- * <try-polar></try-polar>
+ * <hello-polar></hello-polar>
  * @param {string} context Stringified json to pass to the state machine's context. 
  */
 class TryPolar extends useStateMachine(LitElement, {
@@ -217,4 +217,4 @@ class TryPolar extends useStateMachine(LitElement, {
 
 }
 
-customElements.define('try-polar', TryPolar);
+customElements.define('hello-polar', TryPolar);
